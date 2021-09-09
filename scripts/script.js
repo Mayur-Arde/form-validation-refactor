@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+const confirmPassword = document.getElementById('confirm-password');
 
 // Show input error message
 function showError(input, message) {
@@ -72,9 +72,9 @@ function getFieldName(input) {
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  checkRequired([username, email, password, password2]);
+  checkRequired([username, email, password, confirmPassword]);
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);
-  checkPasswordsMatch(password, password2);
+  checkPasswordsMatch(password,confirmPassword);
 });
